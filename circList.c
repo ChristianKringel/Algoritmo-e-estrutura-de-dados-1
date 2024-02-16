@@ -1,6 +1,6 @@
 #include "circList.h"
 #include <stdio.h>
-#include <stdlib.h> // Para malloc
+#include <stdlib.h> 
 
 Lista *criaLista() { return NULL; }
 
