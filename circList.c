@@ -8,13 +8,13 @@ Lista *insereLista(Lista *prim, Lista **ult, int valor) {
   Lista *novo = (Lista *)malloc(sizeof(Lista));
   if (novo == NULL) {
     printf("Erro ao alocar memoria");
-    exit(1); // Importante sair do programa em caso de erro de alocação de memória
+    exit(1);
   }
   novo->info = valor;
 
   if (prim == NULL) {
     novo->prox = novo;
-    *ult = novo; // Atualize o ponteiro para o último elemento
+    *ult = novo; 
     return novo;
   } else {
     novo->prox = prim;
@@ -27,7 +27,7 @@ Lista *insereFim(Lista *prim, Lista *ult, int valor) {
   Lista *novo = (Lista *)malloc(sizeof(Lista));
   if (novo == NULL) {
     printf("Erro ao alocar memoria\n");
-    exit(1); // Importante sair do programa em caso de erro de alocação de memória
+    exit(1);
   }
   novo->info = valor;
   novo->prox = NULL;
