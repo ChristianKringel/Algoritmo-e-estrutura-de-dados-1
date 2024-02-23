@@ -7,5 +7,6 @@ typedef struct Lista {
 
 Lista *criaLista();
 void imprimeLista(Lista *prim);
-void *insereFim(Lista *prim, Lista **ult, int valor);
+void *insereFim(Lista *prim, Lista *ult, int valor);
 Lista *insereLista(Lista *prim, Lista **ult, int valor); 
+Lista *remover(Lista *prim, int valor);

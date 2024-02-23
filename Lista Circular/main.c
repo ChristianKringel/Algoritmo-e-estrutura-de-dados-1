@@ -8,10 +8,13 @@ int main(void) {
   //insereFim(primeiro, &ultimo, 5);
   primeiro = insereLista(primeiro, &ultimo, 10);
   primeiro = insereLista(primeiro, &ultimo, 40);
-  //insereFim(primeiro, &ultimo, 60);
-  //insereFim(primeiro, &ultimo, 5);
+  //insereFim(primeiro, ultimo, 60);
+  //insereFim(primeiro, ultimo, 5);
   primeiro = insereLista(primeiro, &ultimo, 50); // problema na junção das listas 
   primeiro = insereLista(primeiro, &ultimo, 80);
   //imprimeLista(ultimo);
+  imprimeLista(primeiro);
+  primeiro = remover(primeiro, 40);
+  printf("Lista apos remover\n ");
   imprimeLista(primeiro);
 }

@@ -28,7 +28,7 @@ Lista *insereLista(Lista *prim, Lista **ult, int valor)
   }
 }
 
-void *insereFim(Lista *prim, Lista **ult, int valor)
+void *insereFim(Lista *prim, Lista *ult, int valor)
 {
   Lista *novo = (Lista *)malloc(sizeof(Lista));
   if (novo == NULL)
@@ -36,12 +36,10 @@ void *insereFim(Lista *prim, Lista **ult, int valor)
     printf("Erro ao alocar memoria\n");
     exit(1);
   }
-
+  ult = novo;
   novo->info = valor;
-  novo->prox = NULL;
-
-  novo->prox = (*ult)->prox;
-  (*ult)->prox = novo;
+  novo->prox = ult->prox;
+  ult->prox = novo;
   // return ult;
 }
 
@@ -60,4 +58,27 @@ void imprimeLista(Lista *prim)
     aux = aux->prox;
   } while (aux != prim);
   printf("\n");
+}
+
+Lista *remover(Lista *prim, int valor)
+{
+  Lista *aux = (Lista *)malloc(sizeof(Lista));
+  Lista *aux2 = prim;
+  if (prim == NULL)
+    printf("Lista vazia");
+  aux = prim;
+  while (aux != NULL && aux->info != valor)
+  {
+    aux2 = aux;
+    aux = aux->prox;
+  }
+  if (aux != NULL)
+    {
+      if(aux2 == NULL)
+        prim = aux->prox;
+      else
+      aux2->prox = aux->prox;
+    }
+    free(aux);
+    return prim;
 }
