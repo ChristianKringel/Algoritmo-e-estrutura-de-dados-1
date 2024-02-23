@@ -124,9 +124,9 @@ int palindromo(Pilha *pilha)
         aux = aux->prox;
     }
 
-    aux = pilha->topo; // Resetando 'aux' para o topo de 'pilha'
+    aux = pilha->topo; // Resetando aux para o topo de pilha
 
-    // Comparando os elementos de 'pilha' e 'aux2'
+    // Comparando os elementos de pilha e aux2
     while (aux)
     {
         if (aux->info != pop(aux2))
