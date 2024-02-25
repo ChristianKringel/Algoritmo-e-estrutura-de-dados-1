@@ -12,15 +12,17 @@ int main() {
     enqueue(fila, 20);
     enqueue(fila, 30);
     enqueue(fila, 5);
+    
     enqueue(fila2, -9);
     enqueue(fila2, 60);
     //printarFila(fila); 
     //concatenarFila(fila, fila2);
-    //concatenarFilaComplexo(fila, fila2);
     printarFila(fila); 
     printf("\n");
-    reverso(fila);
-    //printarFila(fila); 
+    //reverso(fila);
+    //inverterFila(fila);
+    concatenarFilaComplexo(fila, fila2);
+    printarFila(fila); 
 
 
     /*
