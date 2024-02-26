@@ -82,3 +82,9 @@ Lista *remover(Lista *prim, int valor)
     free(aux);
     return prim;
 }
+
+/* Implemente uma função que inverta uma lista encadeada circular. */
+
+
+
+/* 6. Desenvolva uma função que conte quantos nodos existem em uma lista circular. */

@@ -16,3 +16,5 @@ void inserirFim(List **lista, int valor);
 List *concatenar(List *lista1, List *lista2);
 List *removerPrimeiro(List *lista);
 List *removerElementos(List *lista, int quantidade);
+int maiorValor(List *lista, int *maior, int *posicao);
+int quantidadeDeNPar(List *lista);

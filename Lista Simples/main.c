@@ -5,11 +5,13 @@ int main() {
     List *lista = criarLista();
     List *lista2 = criarLista();
     List *nova = criarLista();
+    int posicao, maior;
 
     // Inserir elementos no início da lista
-    lista = inserirInicio(lista, 10);
+    lista = inserirInicio(lista, 11);
     lista = inserirInicio(lista, 20);
     inserirFim(&lista, 50); 
+    lista = inserirInicio(lista, 3);
     lista = inserirInicio(lista, 30);
 
     lista2 = inserirInicio(lista2, 100);
@@ -17,7 +19,10 @@ int main() {
     lista2 = inserirInicio(lista2, 150);
     //nova = concatenar(lista, lista2);
    // imprimirLista(nova);
-
+    maiorValor(lista, &maior, &posicao);
+        printf("O maior valor eh: %d\n a posicao eh: %d\n", maior, posicao);
+    printf("A quantidade de numeros pares eh: %d\n", quantidadeDeNPar(lista));
+    /*
     printf("\n");
     // Imprimir a lista
     printf("Lista inicial: ");
@@ -25,6 +30,7 @@ int main() {
     lista = removerElemento(lista, 2);
     printf("\n");
     imprimirLista(lista);
+    */ 
 
     printf("Tamanho da lista: %d\n", tamanhoLista(lista));
     // Buscar e imprimir um elemento
