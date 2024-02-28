@@ -158,7 +158,7 @@ void removeDuplicado(Lista *lista)
 
     while (aux1 != NULL && aux1->prox != NULL)
     {
-        aux2 = aux1;    // recebe o valor dele pq n faz sentido ser outra coisa
+        aux2 = aux1; // recebe o valor dele pq n faz sentido ser outra coisa
 
         while (aux2->prox != NULL)
         {
@@ -180,9 +180,29 @@ void removeDuplicado(Lista *lista)
 /* Escreva uma função removeIntervalo que receba dois parâmetros a e b e
 remova todos os elementos que possuem valor (campo info) no intervalo [a, b]
 em uma lista duplamente encadeada. */
-/* 
-void removeIntervalo(Lista *lista, int a, int b)
-{
 
+void removeIntervalo(Lista **lista, int a, int b)
+{
+    Lista *aux = *lista, *temp, *prev = NULL;
+
+    // vai ate a 
+    for (int i = 0; i < a && aux != NULL; i++)
+    {
+        prev = aux;
+        aux = aux->prox;
+    }
+
+    // tira os elementos do intervalo
+    for (int i = a; i <= b && aux != NULL; i++)
+    {
+        temp = aux;
+        aux = aux->prox;
+        free(temp);
+    }
+    
+    if (prev != NULL)
+        prev->prox = aux;
+    else 
+        *lista = aux;
+    
 }
- */ 

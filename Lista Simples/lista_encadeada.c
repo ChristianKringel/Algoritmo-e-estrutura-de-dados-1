@@ -136,7 +136,7 @@ void inserirFim(List **lista, int valor)
 /* Concatena duas listas */
 List *concatenar(List *lista1, List *lista2)
 {
-    List *novo = NULL, *aux1 = lista1, *aux2 = lista2; // Inicialize novo como NULL
+    List *novo = NULL, *aux1 = lista1, *aux2 = lista2;
     while (aux1 != NULL)
     {
         inserirFim(&novo, aux1->info);

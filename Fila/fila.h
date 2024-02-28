@@ -18,7 +18,7 @@ int dequeue(Fila* fila);
 int estaVazio(Fila* fila);
 int maiorFila(Fila *f1, Fila* f2);
 void printarFila(Fila* f1);
-void excluirNeg(Fila* fila);
+void excluirNeg(Fila **fila);
 int quantidadePar(Fila *fila);
 void concatenarFila(Fila* f1, Fila* f2);
 void concatenarFilaComplexo(Fila* f1, Fila* f2);

@@ -16,7 +16,9 @@ int main()
     insereInicio(&lista, 500);
     inserirMeio(&lista, 1010);
     imprimeLista(lista);
-    removeDuplicado(lista);
+    //removeDuplicado(lista);
+    printf("\n Lista apos remocoes no intervalo\n");
+    removeIntervalo(&lista, 2, 4);
     //printf("Removido o valor: %d, da posicao %d\n", removeIndice(lista, 1), 1);
     /*
     printf("O tamanho da lista eh: %d\n", tamanhoLista(lista));

@@ -62,6 +62,7 @@ int estaVazio(Pilha *pilha)
     return (pilha->topo == NULL);
 }
 
+// exercicio de testar parenteses
 void check(char par[])
 {
     int i = 0;
@@ -95,6 +96,7 @@ void check(char par[])
     destruirPilha(pilha);
 }
 
+// testa se duas pilhas são iguais 
 int saoIguais(Pilha *p1, Pilha *p2)
 {
     Nodo *aux1 = p1->topo;
@@ -113,11 +115,13 @@ int saoIguais(Pilha *p1, Pilha *p2)
     return 1;
 }
 
+// testa se uma pilha é palindroma (usando int)
 int palindromo(Pilha *pilha)
 {
     Pilha *aux2 = criarPilha();
     Nodo *aux = pilha->topo;
 
+    // aux 2 é o contrario da pilha
     while (aux)
     {
         push(aux2, aux->info);
@@ -141,6 +145,7 @@ int palindromo(Pilha *pilha)
     return 1;
 }
 
+// tentativa de ordenar uma pilha, n funciona
 void ordenar(Pilha *pilha)
 {
     Nodo *aux2 = pilha->topo;
@@ -163,6 +168,7 @@ void ordenar(Pilha *pilha)
     pilha = reserva;
 }
 
+// printa a pilha
 void printarPilha(Pilha *pilha)
 {
     Nodo *aux = (Nodo *)malloc(sizeof(Nodo));
@@ -174,6 +180,7 @@ void printarPilha(Pilha *pilha)
     }
 }
 
+//pega a maior e a menor media dos valores na pilha
 void menorMaiorMedia(Pilha *p1)
 {
     Nodo *aux = (Nodo *)malloc(sizeof(Pilha));
@@ -200,6 +207,7 @@ void menorMaiorMedia(Pilha *p1)
     printf("A media dos elementos eh: %d\n", (media / contador));
 }
 
+// pega o info do topo 
 int peek(Pilha *pilha)
 {
     if (estaVazio(pilha))
@@ -210,6 +218,7 @@ int peek(Pilha *pilha)
     return pilha->topo->info;
 }
 
+// tentativa errada
 void ordenarPilha(Pilha *pilha)
 {
     Pilha tempPilha;

@@ -99,29 +99,33 @@ int maiorFila(Fila *f1, Fila *f2)
 /*Dada uma fila de inteiros, escreva um programa que exclua todos os números
 negativos da fila sem alterar a posição dos outros elementos da fila. */
 
-void excluirNeg(Fila *fila)
+void excluirNeg(Fila **fila)
 {
-    Nodo *aux = (Nodo *)malloc(sizeof(Nodo));
-    Fila *aux2 = (Fila *)malloc(sizeof(Fila));
-    int temp;
-    aux = fila->inicio;
-    while (aux)
+    Nodo *aux = (*fila)->inicio;
+    Nodo *prev = NULL;
+
+    while (aux != NULL)
     {
-        if (aux->info > 0)
+        if (aux->info <= 0)
         {
-            printf("%d\n", aux->info);
-            enqueue(aux2, aux->info);
+            Nodo *temp = aux;
+            if (prev == NULL)
+            { // se for o prim
+                (*fila)->inicio = aux->prox;
+            }
+            else
+            {
+                prev->prox = aux->prox;
+            }
+            aux = aux->prox;
+            free(temp); 
         }
-        aux = aux->prox;
+        else
+        {
+            prev = aux;
+            aux = aux->prox;
+        }
     }
-    printf("\n");
-    printarFila(fila);
-    printf("\n");
-    printarFila(aux2);
-    printf("\n");
-    fila = aux2;
-    // printarFila(fila);
-    // return aux2;
 }
 
 void printarFila(Fila *f1)
@@ -165,7 +169,7 @@ void concatenarFilaComplexo(Fila *f1, Fila *f2)
     Fila *aux = f1;
     Nodo *fila1;
     Nodo *fila2;
-    for(fila1 = f1->inicio, fila2 = f2->inicio; fila1 != NULL, fila2 != NULL; fila1 = fila1->prox, fila2 = fila2->prox)
+    for (fila1 = f1->inicio, fila2 = f2->inicio; fila1 != NULL, fila2 != NULL; fila1 = fila1->prox, fila2 = fila2->prox)
     {
         enqueue(f1, fila1->info);
         enqueue(f1, fila2->info);
@@ -176,8 +180,8 @@ void concatenarFilaComplexo(Fila *f1, Fila *f2)
         enqueue(f1, dequeue(aux));
         if (aux2->inicio)
             enqueue(f1, dequeue(aux2));
-    } */ 
-    //printarFila(f1);
+    } */
+    // printarFila(f1);
 }
 // 1 -4 6 8
 

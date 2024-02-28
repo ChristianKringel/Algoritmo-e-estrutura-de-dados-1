@@ -16,6 +16,7 @@ int main() {
     push(pilha, 3);
     push(pilha, 1);
     push(pilha, -20);
+    check("((((()))))");
    // ordenarPilha(pilha);
     sortStack(pilha);
     printarPilha(pilha);
@@ -34,8 +35,6 @@ int main() {
         printf("As pilhas sao iguais\n");
     else 
         printf("As pilhas sao diferentes\n");*/ 
-    //check('()');
-    //check(pilha, '(' ')');
 
     //printf("Elemento removido da pilha: %d\n", pop(pilha));
     //printf("Elemento removido da pilha: %d\n", pop(pilha));
