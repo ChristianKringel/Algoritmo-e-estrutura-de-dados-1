@@ -18,9 +18,11 @@ int main() {
     push(pilha, -20);
     check("((((()))))");
    // ordenarPilha(pilha);
-    sortStack(pilha);
+    //sortStack(pilha);
     printarPilha(pilha);
-    menorMaiorMedia(pilha);
+    //menorMaiorMedia(pilha);
+    printf("\n");
+    inverter(pilha);
     /*if(palindromo(pilha))
         printf("A pilha eh palindroma!\n");
     else

@@ -23,3 +23,4 @@ int saoIguais(Pilha* p1, Pilha* p2);
 int palindromo(Pilha* pilha);
 void ordenarPilha(Pilha *pilha);
 void sortStack(Pilha *pilha);
+void inverter(Pilha *pilha);

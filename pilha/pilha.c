@@ -255,3 +255,11 @@ void sortStack(Pilha *pilha)
     while(!estaVazio(tempStack))
         push(pilha, pop(tempStack));
 }
+
+void inverter(Pilha *pilha)
+{
+    Pilha *aux = (Pilha *)malloc(sizeof(Pilha));
+    while(pilha->topo)
+        push(aux, pop(pilha));
+    printarPilha(aux);
+}
